@@ -20,6 +20,6 @@ export default function useQuiz() {
         })
       })
   }
-  useEffect(() => changeQuiz, [])
+  useEffect(() => changeQuiz(), [])
   return [quiz, changeQuiz]
 }
