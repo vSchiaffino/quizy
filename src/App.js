@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react'
 
 function App() {
+  const [quiz, setQuiz] = useState(null)
+  useEffect(() => {
+    fetch('https://the-trivia-api.com/api/questions?limit=1')
+      .then((response) => response.json())
+      .then((data) => {
+        setQuiz({
+          question: data[0].question,
+          answers: data[0].incorrectAnswers.concat(data[0].correctAnswer),
+        })
+      })
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="quiz">
+      {quiz && (
+        <>
+          <h2>{quiz.question}</h2>
+          <div className="options">
+            {quiz.answers.map((answer) => (
+              <div key={answer} className="option">
+                {answer}
+              </div>
+            ))}
+          </div>
+        </>
+      )}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

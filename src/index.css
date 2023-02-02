@@ -1,4 +1,17 @@
+:root {
+  --option-text-color: #fffcff;
+  --font-color: #fffcff;
+  --bg-body: #0c0618;
+  --bg-container: #1b1628;
+  --bg-option: #0c0618;
+  --border-option-color: #c5fe60;
+  --bg-option-hover: #c5fe60;
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
 body {
+  color: var(--font-color);
+  background-color: var(--bg-body);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -7,7 +20,76 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root,
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2%;
+  box-shadow: var(--shadow-md);
+  background: var(--bg-container);
+  min-width: 800px;
+  max-width: 1000px;
+  min-height: 600px;
+}
+
+.quiz h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.quiz .options {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 5rem;
+  margin: 4em 5em;
+  flex-direction: column;
+}
+
+.quiz .option {
+  font-size: large;
+  font-weight: 600;
+  border: 0.5px solid var(--border-option-color);
+  color: var(--option-text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  box-shadow: var(--shadow-md);
+  background-color: var(--bg-option);
+}
+
+.quiz .option:hover {
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.05);
+  background-color: var(--bg-option-hover);
+  color: var(--bg-body);
+}
+
+@media (max-width: 1000px) {
+  .quiz {
+    margin: 2em;
+    min-width: 300px;
+    max-width: 1000px;
+    border-radius: 0;
+  }
+  .quiz .options {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+    margin: 2em 1em;
+  }
 }
