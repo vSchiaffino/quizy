@@ -31,4 +31,24 @@ body {
   align-items: center;
 }
 
+.main {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2%;
+  box-shadow: var(--shadow-md);
+  background: var(--bg-container);
+  min-width: 800px;
+  max-width: 1000px;
+  min-height: 600px;
+}
 
+@media (max-width: 1000px) {
+  .main {
+    margin-top: 1em;
+    margin: 2em;
+    min-width: 300px;
+    max-width: 1000px;
+    border-radius: 0;
+  }
+}

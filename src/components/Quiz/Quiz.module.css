@@ -1,15 +1,3 @@
-.quiz {
-  padding: 2em;
-  display: flex;
-  flex-direction: column;
-  border-radius: 2%;
-  box-shadow: var(--shadow-md);
-  background: var(--bg-container);
-  min-width: 800px;
-  max-width: 1000px;
-  min-height: 600px;
-}
-
 .heading {
   font-size: 2rem;
   text-align: center;

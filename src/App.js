@@ -1,7 +1,11 @@
 import { Quiz } from './components/Quiz/Quiz'
 
 function App() {
-  return <Quiz />
+  return (
+    <div className="main">
+      <Quiz />
+    </div>
+  )
 }
 
 export default App
