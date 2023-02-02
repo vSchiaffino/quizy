@@ -81,6 +81,22 @@ body {
   color: var(--bg-body);
 }
 
+.quiz .option.correct {
+  transform: scale(1.2);
+  border: none;
+  transition: 0.5s;
+  background-color: #60fe8a;
+  color: var(--bg-body);
+}
+
+.quiz .option.incorrect {
+  transform: scale(1.2);
+  border: none;
+  transition: 0.5s;
+  background-color: #fe6060;
+  color: var(--bg-body);
+}
+
 @media (max-width: 1000px) {
   .quiz h2 {
     margin: 0;

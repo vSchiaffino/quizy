@@ -1,27 +1,20 @@
-import { useEffect, useState } from 'react'
+import { Option } from './Option'
+import useQuiz from './hooks/useQuiz'
 
 function App() {
-  const [quiz, setQuiz] = useState(null)
-  useEffect(() => {
-    fetch('https://the-trivia-api.com/api/questions?limit=1')
-      .then((response) => response.json())
-      .then((data) => {
-        setQuiz({
-          question: data[0].question,
-          answers: data[0].incorrectAnswers.concat(data[0].correctAnswer),
-        })
-      })
-  }, [])
+  const [quiz, changeQuiz] = useQuiz()
   return (
     <div className="quiz">
       {quiz && (
         <>
           <h2>{quiz.question}</h2>
           <div className="options">
-            {quiz.answers.map((answer) => (
-              <div key={answer} className="option">
-                {answer}
-              </div>
+            {quiz.answers.map(({ answer, correct }) => (
+              <Option
+                answer={answer}
+                correct={correct}
+                onChangeQuiz={changeQuiz}
+              />
             ))}
           </div>
         </>
