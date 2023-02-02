@@ -1,0 +1,27 @@
+.quiz {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2%;
+  box-shadow: var(--shadow-md);
+  background: var(--bg-container);
+  min-width: 800px;
+  max-width: 1000px;
+  min-height: 600px;
+}
+
+.heading {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.options {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 5rem;
+  margin: 4em 5em;
+  flex-direction: column;
+}
