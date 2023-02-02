@@ -6,6 +6,8 @@
   --bg-option: #0c0618;
   --border-option-color: #c5fe60;
   --bg-option-hover: #c5fe60;
+  --bg-option-correct: #60fe8a;
+  --bg-option-incorrect: #fe6060;
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
@@ -85,7 +87,7 @@ body {
   transform: scale(1.2);
   border: none;
   transition: 0.5s;
-  background-color: #60fe8a;
+  background-color: var(--bg-option-correct);
   color: var(--bg-body);
 }
 
@@ -93,7 +95,7 @@ body {
   transform: scale(1.2);
   border: none;
   transition: 0.5s;
-  background-color: #fe6060;
+  background-color: var(--bg-option-incorrect);
   color: var(--bg-body);
 }
 
