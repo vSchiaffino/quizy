@@ -25,3 +25,25 @@
   margin: 4em 5em;
   flex-direction: column;
 }
+
+@media (max-width: 1000px) {
+  .heading {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .quiz {
+    margin-top: 1em;
+    margin: 2em;
+    min-width: 300px;
+    max-width: 1000px;
+    border-radius: 0;
+  }
+
+  .options {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+    margin: 2em 1em;
+  }
+}

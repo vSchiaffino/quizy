@@ -37,3 +37,10 @@
   background-color: var(--bg-option-incorrect);
   color: var(--bg-body);
 }
+
+@media (max-width: 1000px) {
+  .option {
+    padding: 1em;
+    font-size: medium;
+  }
+}
