@@ -1,9 +1,21 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react'
 
-export default function useQuiz() {
+function setQueryParams(config) {
+  const { category, difficulty } = config
+  const queryParams = []
+  queryParams.push('limit=1')
+  if (category !== 'any') {
+    queryParams.push(`category=${category}`)
+  }
+  queryParams.push(`difficulty=${difficulty}`)
+  return queryParams.join('&')
+}
+
+export default function useQuiz(config) {
   const [quiz, setQuiz] = useState(null)
   const changeQuiz = () => {
-    fetch('https://the-trivia-api.com/api/questions?limit=1')
+    fetch(`https://the-trivia-api.com/api/questions?${setQueryParams(config)}`)
       .then((response) => response.json())
       .then(([data]) => {
         let { incorrectAnswers, correctAnswer } = data
@@ -20,6 +32,6 @@ export default function useQuiz() {
         })
       })
   }
-  useEffect(() => changeQuiz(), [])
+  useEffect(() => changeQuiz(), [config])
   return [quiz, changeQuiz]
 }

@@ -4,8 +4,8 @@ import { Option } from '../Option/Option'
 import styles from './Quiz.module.css'
 import { Heading } from '../Heading/Heading'
 
-export const Quiz = () => {
-  const [quiz, changeQuiz] = useQuiz()
+export const Quiz = ({ config }) => {
+  const [quiz, changeQuiz] = useQuiz(config)
   return (
     quiz && (
       <>

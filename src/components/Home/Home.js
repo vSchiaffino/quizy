@@ -16,7 +16,7 @@ export const Home = ({ setScreen, config, setConfig }) => {
       <Heading title="Quizy app" />
       <form className={styles.form}>
         <Select
-          label="Categories"
+          label="Category"
           options={categories}
           id="categories"
           selected={config.category}
