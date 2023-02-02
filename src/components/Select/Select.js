@@ -2,7 +2,9 @@ import React from 'react'
 import styles from './Select.module.css'
 
 export const Select = ({ label, id, options, selected, setSelected }) => {
-  console.log(options)
+  const onChangeSelected = (e) => {
+    setSelected(e.target.value)
+  }
   return (
     <div className={styles.container}>
       <label htmlFor={id} className={styles.label}>
@@ -12,7 +14,7 @@ export const Select = ({ label, id, options, selected, setSelected }) => {
         className={styles.select}
         id={id}
         value={selected}
-        onChange={setSelected}
+        onChange={onChangeSelected}
       >
         {options.map((option) => (
           <option key={option.value} value={option.value}>
