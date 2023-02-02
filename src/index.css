@@ -58,6 +58,8 @@ body {
 }
 
 .quiz .option {
+  padding: 2em;
+  text-align: center;
   font-size: large;
   font-weight: 600;
   border: 0.5px solid var(--border-option-color);
@@ -80,12 +82,24 @@ body {
 }
 
 @media (max-width: 1000px) {
+  .quiz h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
   .quiz {
+    margin-top: 1em;
     margin: 2em;
     min-width: 300px;
     max-width: 1000px;
     border-radius: 0;
   }
+
+  .quiz .option {
+    padding: 1em;
+    font-size: medium;
+  }
+
   .quiz .options {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
