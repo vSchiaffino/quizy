@@ -13,6 +13,7 @@ export const Quiz = () => {
         <div className={styles.options}>
           {quiz.answers.map(({ answer, correct }) => (
             <Option
+              key={answer}
               answer={answer}
               correct={correct}
               onChangeQuiz={changeQuiz}

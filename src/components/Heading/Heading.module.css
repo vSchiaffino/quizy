@@ -1,12 +1,11 @@
 .heading {
+  margin: 0;
   font-size: 2rem;
   text-align: center;
-  margin-top: 2rem;
 }
 
 @media (max-width: 1000px) {
   .heading {
-    margin: 0;
     font-size: 1.5rem;
   }
 }
