@@ -1,7 +1,9 @@
 # Quizy app
 
 This project is a trivia app, using [The trivia api](https://the-trivia-api.com/) and [React](https://reactjs.org/)
+You can select the difficulty and the category of the questions.
 
+![image](https://user-images.githubusercontent.com/49006052/216458246-82561935-6737-4efe-99ec-88ba4965b01a.png)
 ![image](https://user-images.githubusercontent.com/49006052/216429139-199eda35-d34b-49b9-9ba1-18b8506e859a.png)
 
 
